@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f6f1e8">
+<title>لمار متعب | مساحة ذكر</title>
+<style>
+:root{--bg:#f6f1e8;--card:#fffdf8;--ink:#40382f;--muted:#817565;--accent:#8b765c;--line:#e8dfd2}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(160deg,#f8f4ed,#eee5d8);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif}
+main{width:min(720px,92%);margin:34px auto 50px}.hero{text-align:center;padding:25px 12px 18px}.ornament{color:var(--accent);font-size:22px;letter-spacing:8px}
+h1{font-size:clamp(28px,6vw,42px);font-weight:600;margin:10px 0 5px}.subtitle{color:var(--muted);margin:0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:23px;padding:22px;margin:15px 0;box-shadow:0 8px 28px #59452b0c}
+h2{font-size:20px;margin:0 0 15px;font-weight:600}.dhikr{text-align:center;font-size:clamp(21px,4.7vw,29px);line-height:1.9;margin:12px 0 18px}
+.count{font-size:38px;font-variant-numeric:tabular-nums;color:var(--accent);text-align:center;margin:4px 0}
+button{font:inherit;border:0;border-radius:14px;padding:12px 18px;cursor:pointer}
+.primary{display:block;width:100%;background:var(--accent);color:white;font-weight:600}
+.secondary{background:#eee7dc;color:var(--ink)}.controls{display:flex;gap:9px}.controls button{flex:1}
+.small{font-size:13px;color:var(--muted);text-align:center;margin:10px 0 0}
+.list{display:grid;gap:12px}.prayer{padding:13px 15px;border-radius:15px;background:#f8f4ed;line-height:1.9}
+.prayer strong{display:block;color:var(--accent);font-size:14px;margin-bottom:3px}
+footer{text-align:center;color:var(--muted);padding:18px 0 8px;font-size:14px}
+hr{border:0;border-top:1px solid var(--line);margin:18px 0}
+@media(min-width:600px){.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}.two .card{margin:0}}
+</style>
+</head>
+<body>
+<main>
+<header class="hero">
+  <div class="ornament">✦ ✧ ✦</div>
+  <h1>لمار متعب</h1>
+  <p class="subtitle">مساحة هادئة للذكر والدعاء</p>
+</header>
+
+<section class="card">
+  <h2>عداد الاستغفار</h2>
+  <div class="dhikr">أستغفر الله العظيم وأتوب إليه</div>
+  <div class="count" id="istighfarCount">٠</div>
+  <button class="primary" onclick="add('istighfar')">أستغفر الله</button>
+  <div class="controls" style="margin-top:10px">
+    <button class="secondary" onclick="reset('istighfar')">تصفير العداد</button>
+  </div>
+</section>
+
+<div class="two">
+<section class="card">
+  <h2>الصلاة على النبي ﷺ</h2>
+  <div class="dhikr">اللهم صل وسلم على نبينا محمد</div>
+  <div class="count" id="salawatCount">٠</div>
+  <button class="primary" onclick="add('salawat')">اللهم صل وسلم عليه</button>
+  <p class="small"><button class="secondary" onclick="reset('salawat')">تصفير العداد</button></p>
+</section>
+<section class="card">
+  <h2>التسبيح</h2>
+  <div class="dhikr">سبحان الله وبحمده</div>
+  <div class="count" id="tasbeehCount">٠</div>
+  <button class="primary" onclick="add('tasbeeh')">سبحان الله وبحمده</button>
+  <p class="small"><button class="secondary" onclick="reset('tasbeeh')">تصفير العداد</button></p>
+</section>
+</div>
+
+<section class="card">
+<h2>أدعية من القلب</h2>
+<div class="list">
+<div class="prayer"><strong>للمغفرة والرحمة</strong>اللهم اغفر لي ولوالدي ولمن أحب، وارحمنا برحمتك الواسعة، وتجاوز عنا واعف عنا.</div>
+<div class="prayer"><strong>للوالدين</strong>رب ارحمهما كما ربياني صغيرا، وألبسهما لباس الصحة والعافية، واجزهما عني خير الجزاء.</div>
+<div class="prayer"><strong>للتوفيق والتيسير</strong>اللهم يسر لي أمري، واشرح لي صدري، ووفقني لما تحب وترضى، واكتب لي الخير حيث كان.</div>
+<div class="prayer"><strong>للرزق والبركة</strong>اللهم ارزقني رزقا طيبا مباركا فيه، وافتح لي أبواب فضلك، واغنني بحلالك عن حرامك.</div>
+<div class="prayer"><strong>لطمأنينة القلب</strong>اللهم أنزل على قلبي سكينتك، وأبعد عني الهم والحيرة، واجعل لي من كل ضيق مخرجا ومن كل عسر يسرا.</div>
+<div class="prayer"><strong>لمن نحب</strong>اللهم احفظ من نحب، وأسعد قلوبهم، واصرف عنهم كل سوء، واكتب لهم من الخير أجمله.</div>
+<div class="prayer"><strong>للمسلمين</strong>اللهم اغفر للمؤمنين والمؤمنات، والمسلمين والمسلمات، الأحياء منهم والأموات.</div>
+<div class="prayer"><strong>دعاء جامع</strong>ربنا آتنا في الدنيا حسنة وفي الآخرة حسنة وقنا عذاب النار.</div>
+</div>
+</section>
+
+<section class="card" style="text-align:center">
+<div class="ornament">♡</div>
+<div class="dhikr" style="font-size:21px">اللهم اجعل هذا الذكر نورا وأجرا، وانفع به كل من مر من هنا، واكتب لنا ولكم القبول.</div>
+<div class="small">﴿ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ ﴾</div>
+</section>
+<footer>لمار متعب</footer>
+</main>
+<script>
+const labels={istighfar:'istighfarCount',salawat:'salawatCount',tasbeeh:'tasbeehCount'};
+const nums={istighfar:0,salawat:0,tasbeeh:0};
+const fmt=n=>new Intl.NumberFormat('ar-SA').format(n);
+function render(k){document.getElementById(labels[k]).textContent=fmt(nums[k]);}
+function add(k){nums[k]++;render(k)}
+function reset(k){nums[k]=0;render(k)}
+</script>
+</body>
+</html>
